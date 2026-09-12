@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d1117">
+  <title>CoC Upgrade Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div><h1>⚔️ CoC Upgrade Tracker</h1><p>Dein digitaler Dorf-Zwilling</p></div>
+  <button id="addAccount" class="primary">＋ Account</button>
+</header>
+<main><aside id="accounts"></aside><section id="content"></section></main>
+
+<dialog id="importDialog">
+  <form method="dialog" class="modal">
+    <div class="modalHead"><div><h2 id="importTitle">Village JSON importieren</h2><p>Clash of Clans → Einstellungen → Weitere Einstellungen → Village Data Export → Copy</p></div><button value="cancel" class="iconBtn" aria-label="Schließen">✕</button></div>
+    <textarea id="jsonInput" spellcheck="false" placeholder='{"tag":"#...","timestamp":...,"buildings":[...]}'></textarea>
+    <div id="importError" class="error hidden"></div>
+    <div class="modalActions">
+      <button value="cancel" class="small">Abbrechen</button>
+      <button type="button" id="pasteClipboard" class="small">Aus Zwischenablage</button>
+      <button type="button" id="doImport" class="primary">JSON importieren</button>
+    </div>
+  </form>
+</dialog>
+<footer class="siteFooter">Village-Daten bleiben lokal in deinem Browser gespeichert.</footer>
+<script type="module" src="app.js"></script>
+</body></html>
